@@ -1,9 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static DataManager;
 
 public class DataManager : MonoBehaviour
 {
+
+
+
+
+
+
+
+
+
+
+
     // Scene이 바뀐다던가 해도 유지해야하는 데이터
     public class Player
     {
@@ -17,15 +29,10 @@ public class DataManager : MonoBehaviour
         public static string playerName = "2hys";
 
         //
-        public static int gold;
+        public static int gold = 100;
         public static int level;
         public static float exp;
 
     }
 
-    // item
-    public class Item
-    {
-
-    }
 }
