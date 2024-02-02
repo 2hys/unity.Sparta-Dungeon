@@ -14,15 +14,16 @@ public class ItemDatabase : MonoBehaviour
     public List<Item> itemDB = new List<Item>();
 
     public GameObject shopItemPrefeb;
-    
+    public GameObject content;
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (Item item in itemDB)
+        for (int i = 0; i < 3; i++)
         {
-            //shopItemPrefeb...이 배치되게끔? 아 같은 아이템 배치할것도 아닌데..?
-            
+            GameObject shopitem = Instantiate(shopItemPrefeb);
+            shopitem.transform.parent = content.transform;
+            shopitem.GetComponent<ShopItems>().SetItem(itemDB[i]);
         }
     }
 
