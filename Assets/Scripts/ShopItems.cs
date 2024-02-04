@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ShopItems : MonoBehaviour
 {
@@ -10,15 +11,21 @@ public class ShopItems : MonoBehaviour
     //public SpriteRenderer image;
     public Image image;
     public Text DescTxt, AtkTxt, DefTxt, GoldTxt;
+    public Button btn;
     public void SetItem(Item _item)
     {
         item.Name = _item.Name;
         item.itemImage = _item.itemImage;
         item.itemType = _item.itemType;
-
+        item.Gold = _item.Gold;
         //image.sprite = item.itemImage;
         image.sprite = item.itemImage;
         //todo : 프리펩에 text 넣고 확인
+    }
+
+    public void SetBuyItem(Item _item)
+    {
+        item.Gold = _item.Gold;
     }
 
     public void SetItemDesc(Item _item)
@@ -51,9 +58,23 @@ public class ShopItems : MonoBehaviour
         GoldTxt.text = (item.Gold).ToString();
     }
     //SetItem에서 넣은 구매될 아이템 정보들을 넘김.
+    public Item SetItemBuyBtn(Item _item)
+    {
+        return _item;
+    }
     public Item BuyItem()
     {
         return item;
+    }
+    public void Is()
+    {
+        Debug.Log("Check");
+    }
+
+    public void Click()
+    {
+        Debug.Log("Click");
+        BuyItem();
     }
 
 
