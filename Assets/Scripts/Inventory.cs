@@ -47,28 +47,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    //ShopItems shopItems = new ShopItems();//todo : ?
 
-
-    //PlayerManager player = new PlayerManager();
-
-    /*
-    public bool AddItem(Item _item)
-    {
-        Debug.Log("버튼누름");
-        Debug.Log(_item.Gold);
-        Debug.Log(PlayerManager.gold);
-
-        if (_item.Gold <= PlayerManager.gold)
-        {
-            inventory.Add(_item);
-            PlayerManager.gold -= _item.Gold;
-            Debug.Log("아이템 구매 완료");
-            return true;
-        }
-        return false;
-    }
-    */
     private void Update()
     {
         //Debug.Log(inventory.Count);
@@ -77,12 +56,23 @@ public class Inventory : MonoBehaviour
     //ShopItems shopItems = new ShopItems();
     public void AddItem(Item _item)
     {
-        inventory.Add(_item);
-        Debug.Log(inventory.Count);
-        GameObject inventoryitem = Instantiate(inventoryItemPrefeb);
-        inventoryitem.transform.parent = content.transform;
-        inventoryitem.GetComponentInChildren<ShopItems>().SetItem(_item);
-        //return true;
+        if (inventory.Count < 9)
+        {
+            if (_item.Gold <= PlayerManager.gold)
+            {
+                inventory.Add(_item);
+                GameObject inventoryitem = Instantiate(inventoryItemPrefeb);
+                inventoryitem.transform.parent = content.transform;
+                inventoryitem.GetComponentInChildren<ShopItems>().SetItem(_item);
+                PlayerManager.gold -= _item.Gold;
+                Debug.Log("아이템 구매 완료");
+            }
+            else
+                Debug.Log("돈 부족함");
+        }
+        else
+            Debug.Log("더 이상 아이템을 구매할 수 없습니다(인벤토리 슬롯 부족)");
+        Debug.Log("인벤토리카운트 : " + inventory.Count);
     }
     /*
     public void ShopBuy()

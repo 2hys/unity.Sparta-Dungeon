@@ -31,12 +31,7 @@ public class ItemDatabase : MonoBehaviour
             //아이템 구매
             shopitem.GetComponentsInChildren<ShopItems>()[4].SetItemBuyBtn(itemDB[i]);
         }
-        //test용
-        for (int i = 0; i < 3; i++)
-        {
-            //inventory.Add(itemDB[i]);
-            Inventory.instance.AddItem(itemDB[i]);
-        }
+
     }
 
     // Update is called once per frame

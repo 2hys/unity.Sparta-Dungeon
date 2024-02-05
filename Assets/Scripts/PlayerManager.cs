@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-
-    DataManager dataManager;
+    #region Singleton
+    public static PlayerManager instance;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
+    #endregion
 
     public static float atk = 35;
     public static float def = 40;
@@ -15,13 +25,10 @@ public class PlayerManager : MonoBehaviour
     public static string playerDesc = "피곤한 상태입니다.";
 
     //
-    public static int gold = 100;
+    public static int gold = 500;
     public static int playerLevel = 1;
     public static float exp;
-    private void Awake()
-    {
-        dataManager = GetComponent<DataManager>();
-    }
+
     // Start is called before the first frame update
     void Start()
     {
