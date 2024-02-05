@@ -15,11 +15,21 @@ public class UIManager : MonoBehaviour
             return;
         }
         instance = this;
+
+        inventoryPanel.SetActive(false);
+        shopPanel.SetActive(false);
+        statsPanel.SetActive(false);
     }
     #endregion
     public GameObject inventoryPanel;
     public GameObject shopPanel;
     public GameObject statsPanel;
+
+
+    public Text playerAtk;
+    public Text playerDef;
+    public Text playerHp;
+    public Text playerCri;
 
     public Text playerName;
     public Text playerLevel;
@@ -33,16 +43,10 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventoryPanel.SetActive(false);
-        shopPanel.SetActive(false);
-        inventoryPanel.SetActive(false);
 
-        playerName.text = PlayerManager.playerName;
-        playerLevel.text = "Level : " + PlayerManager.playerLevel.ToString();
-        playerDesc.text = PlayerManager.playerDesc;
-        playerGold.text = PlayerManager.gold.ToString();
 
-    }
+        UIUpdate();
+}
 
     public void MainBtnOnClick(GameObject panel)
     {
@@ -55,6 +59,14 @@ public class UIManager : MonoBehaviour
     }
     public void UIUpdate()
     {
+        playerName.text = PlayerManager.playerName;
+        playerLevel.text = "Level : " + PlayerManager.playerLevel.ToString();
+        playerDesc.text = PlayerManager.playerDesc;
         playerGold.text = PlayerManager.gold.ToString();
+
+        playerAtk.text = PlayerManager.atk.ToString("F0");
+        playerDef.text = PlayerManager.def.ToString("F0");
+        playerHp.text = PlayerManager.hp.ToString("F0");
+        playerCri.text = PlayerManager.cri.ToString("F0");
     }
 }
