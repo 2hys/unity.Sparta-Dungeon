@@ -65,6 +65,7 @@ public class Inventory : MonoBehaviour
                 inventoryitem.transform.parent = content.transform;
                 inventoryitem.GetComponentInChildren<ShopItems>().SetItem(_item);
                 PlayerManager.gold -= _item.Gold;
+                UIManager.instance.UIUpdate();
                 Debug.Log("아이템 구매 완료");
             }
             else
