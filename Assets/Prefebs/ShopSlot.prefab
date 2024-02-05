@@ -64,10 +64,10 @@ MonoBehaviour:
     Type: 
     Name: 
     Desc: 
-    Number: 
     Gold: 0
     Atk: 0
     Def: 0
+    Number: 0
     itemImage: {fileID: 0}
     isEquied: 0
   image: {fileID: 0}
@@ -76,6 +76,7 @@ MonoBehaviour:
   DefTxt: {fileID: 0}
   GoldTxt: {fileID: 0}
   btn: {fileID: 0}
+  itemnumber: 0
 --- !u!114 &482252610725132242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,10 +218,10 @@ MonoBehaviour:
     Type: 
     Name: 
     Desc: 
-    Number: 
     Gold: 0
     Atk: 0
     Def: 0
+    Number: 0
     itemImage: {fileID: 0}
     isEquied: 0
   image: {fileID: 0}
@@ -229,6 +230,7 @@ MonoBehaviour:
   DefTxt: {fileID: 0}
   GoldTxt: {fileID: 4054761299835692796}
   btn: {fileID: 0}
+  itemnumber: 0
 --- !u!114 &4054761299835692796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,10 +321,10 @@ MonoBehaviour:
     Type: 
     Name: 
     Desc: 
-    Number: 
     Gold: 0
     Atk: 0
     Def: 0
+    Number: 0
     itemImage: {fileID: 0}
     isEquied: 0
   image: {fileID: 1946934808954864080}
@@ -331,6 +333,7 @@ MonoBehaviour:
   DefTxt: {fileID: 0}
   GoldTxt: {fileID: 0}
   btn: {fileID: 0}
+  itemnumber: 0
 --- !u!222 &8125608003398630211
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -381,7 +384,6 @@ GameObject:
   - component: {fileID: 1603910715539140826}
   - component: {fileID: 3463131347519755772}
   - component: {fileID: 5684969873709475276}
-  - component: {fileID: 2161926754892200858}
   - component: {fileID: 455209530953469040}
   m_Layer: 5
   m_Name: BuyBtn
@@ -495,7 +497,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 455209530953469040}
         m_TargetAssemblyTypeName: ShopItems, Assembly-CSharp
-        m_MethodName: Click
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -505,18 +507,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2161926754892200858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086099432765073672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975d9f1fc8f10b646956046e6c9b3b4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &455209530953469040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,10 +524,10 @@ MonoBehaviour:
     Type: 
     Name: 
     Desc: 
-    Number: 
     Gold: 0
     Atk: 0
     Def: 0
+    Number: 0
     itemImage: {fileID: 0}
     isEquied: 0
   image: {fileID: 0}
@@ -546,6 +536,7 @@ MonoBehaviour:
   DefTxt: {fileID: 0}
   GoldTxt: {fileID: 0}
   btn: {fileID: 0}
+  itemnumber: 0
 --- !u!1 &2307538753643632255
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,10 +681,10 @@ MonoBehaviour:
     Type: 
     Name: 
     Desc: 
-    Number: 
     Gold: 0
     Atk: 0
     Def: 0
+    Number: 0
     itemImage: {fileID: 0}
     isEquied: 0
   image: {fileID: 0}
@@ -702,6 +693,7 @@ MonoBehaviour:
   DefTxt: {fileID: 0}
   GoldTxt: {fileID: 0}
   btn: {fileID: 0}
+  itemnumber: 0
 --- !u!114 &8906120685174787980
 MonoBehaviour:
   m_ObjectHideFlags: 0

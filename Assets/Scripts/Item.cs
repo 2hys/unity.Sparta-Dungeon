@@ -14,8 +14,8 @@ public class Item
         Etc//potion?
     }
     public ItemType itemType;
-    public string Type, Name, Desc, Number;
-    public int Gold, Atk, Def;
+    public string Type, Name, Desc;
+    public int Gold, Atk, Def, Number;
     public Sprite itemImage;
     public bool isEquied;
 

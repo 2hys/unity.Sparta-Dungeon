@@ -25,4 +25,9 @@ public class InventoryUI : MonoBehaviour
             //과제에서는 우선 InventoryUI를 이용(클릭 등)
         }
     }
+
+    void ItemEquied()
+    {
+
+    }
 }

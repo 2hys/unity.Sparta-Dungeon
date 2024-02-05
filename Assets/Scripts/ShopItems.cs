@@ -12,15 +12,22 @@ public class ShopItems : MonoBehaviour
     public Image image;
     public Text DescTxt, AtkTxt, DefTxt, GoldTxt;
     public Button btn;
+
+    //ItemDatabase itemDatabase;
+
+    public int itemnumber;
+    private void Awake()
+    {
+        //itemDatabase = GetComponent<ItemDatabase>();
+    }
+
     public void SetItem(Item _item)
     {
         item.Name = _item.Name;
         item.itemImage = _item.itemImage;
         item.itemType = _item.itemType;
         item.Gold = _item.Gold;
-        //image.sprite = item.itemImage;
         image.sprite = item.itemImage;
-        //todo : 프리펩에 text 넣고 확인
     }
 
     public void SetBuyItem(Item _item)
@@ -58,9 +65,9 @@ public class ShopItems : MonoBehaviour
         GoldTxt.text = (item.Gold).ToString();
     }
     //SetItem에서 넣은 구매될 아이템 정보들을 넘김.
-    public Item SetItemBuyBtn(Item _item)
+    public int SetItemBuyBtn(Item _item)
     {
-        return _item;
+        return itemnumber = _item.Number;
     }
     public Item BuyItem()
     {
@@ -71,10 +78,10 @@ public class ShopItems : MonoBehaviour
         Debug.Log("Check");
     }
 
-    public void Click()
+    public void OnClick()
     {
         Debug.Log("Click");
-        BuyItem();
+        Inventory.instance.AddItem(ItemDatabase.instance.itemDB[0]);
     }
 
 

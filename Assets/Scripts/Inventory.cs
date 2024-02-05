@@ -20,17 +20,31 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
     #endregion
+ 
+
+    //public List<Item> itemDB = new List<Item>();
+
     //소유한 아이템을 담을 List
-    List<Item> inventory = new List<Item>();
-
-    public List<Item> itemDB = new List<Item>();
-
+    public List<Item> inventory = new List<Item>();
     public GameObject inventoryItemPrefeb;
     public GameObject content;
 
+
+    public bool hatIsEquied = false;
+    public bool armorIsEquied = false;
+    public bool weaponIsEquied = false;
+    public bool ringIsEquied = false;
+
+
+
     void Start()
     {
-        
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            GameObject inventoryitem = Instantiate(inventoryItemPrefeb);
+            inventoryitem.transform.parent = content.transform;
+            inventoryitem.GetComponentInChildren<ShopItems>().SetItem(inventory[i]);
+        }
     }
 
     //ShopItems shopItems = new ShopItems();//todo : ?
@@ -55,15 +69,22 @@ public class Inventory : MonoBehaviour
         return false;
     }
     */
-    /*
-    ShopItems shopItems = new ShopItems();
-    public bool AddItem(Item _item)
+    private void Update()
+    {
+        Debug.Log(inventory.Count);
+    }
+
+    //ShopItems shopItems = new ShopItems();
+    public void AddItem(Item _item)
     {
         inventory.Add(_item);
         Debug.Log(inventory.Count);
-        return true;
+        GameObject inventoryitem = Instantiate(inventoryItemPrefeb);
+        inventoryitem.transform.parent = content.transform;
+        inventoryitem.GetComponentInChildren<ShopItems>().SetItem(_item);
+        //return true;
     }
-
+    /*
     public void ShopBuy()
     {
         if (AddItem(shopItems.BuyItem()))

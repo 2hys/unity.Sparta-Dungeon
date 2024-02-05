@@ -11,11 +11,12 @@ public class PlayerManager : MonoBehaviour
     public static float def = 40;
     public static float hp = 100;
     public static float cri = 25;
-    public static string playerName = "2hys";
+    public static string playerName = "Chad";
+    public static string playerDesc = "피곤한 상태입니다.";
 
     //
     public static int gold = 100;
-    public static int level;
+    public static int playerLevel = 1;
     public static float exp;
     private void Awake()
     {
