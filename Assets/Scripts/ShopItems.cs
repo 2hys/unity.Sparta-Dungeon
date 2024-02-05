@@ -15,7 +15,6 @@ public class ShopItems : MonoBehaviour
 
     //ItemDatabase itemDatabase;
 
-    public int itemnumber;
     private void Awake()
     {
         //itemDatabase = GetComponent<ItemDatabase>();
@@ -65,9 +64,9 @@ public class ShopItems : MonoBehaviour
         GoldTxt.text = (item.Gold).ToString();
     }
     //SetItem에서 넣은 구매될 아이템 정보들을 넘김.
-    public int SetItemBuyBtn(Item _item)
+    public void SetItemBuyBtn(Item _item)
     {
-        return itemnumber = _item.Number;
+        item.Number = _item.Number;
     }
     public Item BuyItem()
     {
@@ -80,8 +79,8 @@ public class ShopItems : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("Click");
-        Inventory.instance.AddItem(ItemDatabase.instance.itemDB[0]);
+        Debug.Log(item.Number);
+        Inventory.instance.AddItem(ItemDatabase.instance.itemDB[item.Number]);
     }
 
 

@@ -7,7 +7,7 @@ public class ItemDatabase : MonoBehaviour
 {
     public static ItemDatabase instance;
 
-    //절대건들지마..
+    //절대건들지마.. 리스트 건들면 초기화돼..
     public List<Item> itemDB = new List<Item>();
     //public List<Item> inventory = new List<Item>();
 
@@ -29,7 +29,7 @@ public class ItemDatabase : MonoBehaviour
             shopitem.GetComponentsInChildren<ShopItems>()[3].SetItemGold(itemDB[i]);
 
             //아이템 구매
-            shopitem.GetComponentsInChildren<ShopItems>()[4].SetBuyItem(itemDB[i]);
+            shopitem.GetComponentsInChildren<ShopItems>()[4].SetItemBuyBtn(itemDB[i]);
         }
         //test용
         for (int i = 0; i < 3; i++)

@@ -71,7 +71,7 @@ public class Inventory : MonoBehaviour
     */
     private void Update()
     {
-        Debug.Log(inventory.Count);
+        //Debug.Log(inventory.Count);
     }
 
     //ShopItems shopItems = new ShopItems();
