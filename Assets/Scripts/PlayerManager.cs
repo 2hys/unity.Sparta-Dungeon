@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,24 @@ public class PlayerManager : MonoBehaviour
     public static int playerLevel = 1;
     public static float exp;
 
+
+    public void StatUpdate()
+    {
+        for(int i = 0; i < Inventory.instance.inventory.Count; i++)
+        {
+            Debug.Log(Inventory.instance.inventory[i].Name + "의 장착을 확인중");
+            Debug.Log(Inventory.instance.inventory[i].Desc + " : 설명");
+            if (Inventory.instance.inventory[i].isEquied == true)
+            {
+                Debug.Log(Inventory.instance.inventory[i].Name + "의 장착을 확인함. 스텟 적용");
+                atk += Inventory.instance.inventory[i].Atk;
+            }
+            else
+                Debug.Log(Inventory.instance.inventory[i].Name + "은 장착중이지 않음.");
+        }
+        Debug.Log(atk);
+        UIManager.instance.UIUpdate();
+    }
     // Start is called before the first frame update
     void Start()
     {

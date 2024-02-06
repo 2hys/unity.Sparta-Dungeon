@@ -30,4 +30,13 @@ public class InventoryUI : MonoBehaviour
     {
 
     }
+    public void OnClickEquied(int i)
+    {
+        if (Inventory.instance.inventory[i].isEquied == false)
+        {
+            Debug.Log(Inventory.instance.inventory[i].Name + "을 장착했습니다.");
+            Inventory.instance.inventory[i].isEquied = true;
+        }
+        PlayerManager.instance.StatUpdate();
+    }
 }

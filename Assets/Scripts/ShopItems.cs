@@ -12,7 +12,7 @@ public class ShopItems : MonoBehaviour
     public Image image;
     public Text DescTxt, AtkTxt, DefTxt, GoldTxt;
     public Button btn;
-
+    
     //ItemDatabase itemDatabase;
 
     private void Awake()
@@ -26,6 +26,8 @@ public class ShopItems : MonoBehaviour
         item.itemImage = _item.itemImage;
         item.itemType = _item.itemType;
         item.Gold = _item.Gold;
+        item.Atk = _item.Atk;
+
         image.sprite = item.itemImage;
     }
 
@@ -81,9 +83,34 @@ public class ShopItems : MonoBehaviour
     {
         Debug.Log(item.Number);
         Inventory.instance.AddItem(ItemDatabase.instance.itemDB[item.Number]);
+        ItemDatabase.instance.itemDB[item.Number].Number = Inventory.instance.inventoryCount;
     }
 
 
+
+    ShopItems shopItems;
+
+    public void OnClickEquied()
+    {
+        shopItems = GetComponent<ShopItems>();
+
+        if (shopItems.item.isEquied == false)
+        {
+            Debug.Log(shopItems.item.Name + "을 장착했습니다.");
+            shopItems.item.isEquied = true;
+        }
+        PlayerManager.instance.StatUpdate();
+    }
+
+    public void _OnClickEquied()
+    {
+        if (Inventory.instance.inventory[0].isEquied == false)
+        {
+            Debug.Log(Inventory.instance.inventory[0].Name + "을 장착했습니다.");
+            Inventory.instance.inventory[0].isEquied = true;
+        }
+        PlayerManager.instance.StatUpdate();
+    }
     //public void DestryItem()
     //Destory하지않음.
     //이미 구매했어도 추가 구매 가능.

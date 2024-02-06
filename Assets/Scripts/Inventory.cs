@@ -29,13 +29,12 @@ public class Inventory : MonoBehaviour
     public GameObject inventoryItemPrefeb;
     public GameObject content;
 
-
+    public bool weaponIsEquied = false;
     public bool hatIsEquied = false;
     public bool armorIsEquied = false;
-    public bool weaponIsEquied = false;
     public bool ringIsEquied = false;
 
-
+    public int inventoryCount = 0;
 
     void Start()
     {
@@ -75,6 +74,85 @@ public class Inventory : MonoBehaviour
             Debug.Log("더 이상 아이템을 구매할 수 없습니다(인벤토리 슬롯 부족)");
         Debug.Log("인벤토리카운트 : " + inventory.Count);
     }
+    int itemnumber;
+
+    public void OnClickEquied()
+    {
+
+
+
+
+
+        ShopItems shopItems;
+        shopItems = GetComponent<ShopItems>();
+
+
+        /*
+        //Item item = inventory[0];
+        ShopItems.Destroy(gameObject);
+        if (item.itemType == Item.ItemType.Weapon)
+        {
+            if (weaponIsEquied == false)
+            {
+                weaponIsEquied = true;
+            }
+            else
+            {
+                weaponIsEquied = false;
+            }
+        }
+        if (item.itemType == Item.ItemType.Hat)
+        {
+            if (hatIsEquied == false)
+            {
+                hatIsEquied = true;
+            }
+            else
+            {
+                hatIsEquied = false;
+            }
+        }
+        if (item.itemType == Item.ItemType.Armor)
+        {
+            if (armorIsEquied == false)
+            {
+                armorIsEquied = true;
+            }
+            else
+            {
+                armorIsEquied = false;
+            }
+        }
+        if (item.itemType == Item.ItemType.Weapon)
+        {
+            if (weaponIsEquied == false)
+            {
+                weaponIsEquied = true;
+            }
+            else
+            {
+                weaponIsEquied = false;
+            }
+        }
+        if (item.itemType == Item.ItemType.Ring)
+        {
+            if (ringIsEquied == false)
+            {
+                ringIsEquied = true;
+            }
+            else
+            {
+                ringIsEquied = false;
+            }
+        }
+        UIManager.instance.UIUpdate();
+        //PlayerManager.instance.StatsUpdate();
+        //todo :
+        */
+    }
+
+
+
     /*
     public void ShopBuy()
     {
