@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class InventoryUI : MonoBehaviour
         inventory = Inventory.instance;
 
     }
+
+    public GameObject EuqiedImage;
 
     // Update is called once per frame
     void Update()
@@ -44,11 +47,13 @@ public class InventoryUI : MonoBehaviour
         {
             Debug.Log(Inventory.instance.inventory[i].Name + "을 장착했습니다.");
             Inventory.instance.inventory[i].isEquied = true;
+            EuqiedImage.SetActive(true);
         }
         else if (Inventory.instance.inventory[i].isEquied == true)
         {
             Debug.Log(Inventory.instance.inventory[i].Name + "을 장착해제했습니다.");
             Inventory.instance.inventory[i].isEquied = false;
+            EuqiedImage.SetActive(false);
         }
         PlayerManager.instance.StatUpdate();
     }
