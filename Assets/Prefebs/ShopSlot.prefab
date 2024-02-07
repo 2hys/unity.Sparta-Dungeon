@@ -77,7 +77,7 @@ MonoBehaviour:
   image: {fileID: 0}
   DescTxt: {fileID: 0}
   AtkTxt: {fileID: 482252610725132242}
-  DefTxt: {fileID: 0}
+  DefTxt: {fileID: 482252610725132242}
   GoldTxt: {fileID: 0}
   btn: {fileID: 0}
 --- !u!114 &482252610725132242

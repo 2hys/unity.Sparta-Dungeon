@@ -5511,7 +5511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.88235295, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6100,13 +6100,55 @@ MonoBehaviour:
     ringIsEquied: 0
   - itemType: 0
     Type: 
-    Name: "\uC544\uBA384"
-    Desc: "\uC124\uBA85\uC784"
-    Gold: 42
+    Name: "\uAC801"
+    Desc: "\uB2E8\uB3C4\uC774\uB2E4."
+    Gold: 100
     Atk: 10
     Def: 0
     Number: 3
-    itemImage: {fileID: 21300000, guid: 131ae7d5c3bf62f4ca9d47f57e1ef952, type: 3}
+    itemImage: {fileID: 21300000, guid: 1ff1175d56df9eb4f8cfa0ba429d9254, type: 3}
+    isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
+  - itemType: 0
+    Type: 
+    Name: "\uAC801"
+    Desc: "\uBC38\uB7F0\uC2A4\uAC00 \uC798 \uAC16\uCDB0\uC9C4 \uAC80\uC774\uB2E4."
+    Gold: 200
+    Atk: 20
+    Def: 0
+    Number: 4
+    itemImage: {fileID: 21300000, guid: 789e518168d493d4396ec984b1b5bcb3, type: 3}
+    isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
+  - itemType: 0
+    Type: 
+    Name: "\uC804\uC7A5\uC758 \uD6C4\uB4DC"
+    Desc: "\uC4F0\uAE30 \uC88B\uC740 \uBAA8\uC790\uC774\uB2E4."
+    Gold: 200
+    Atk: 5
+    Def: 0
+    Number: 4
+    itemImage: {fileID: 21300000, guid: b53db54545fcd5747b7ba5e450c07baf, type: 3}
+    isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
+  - itemType: 0
+    Type: 
+    Name: "\uBE0C\uB860\uC988 \uB9C1"
+    Desc: "\uC800\uB834\uD55C \uBC18\uC9C0\uC774\uB2E4."
+    Gold: 50
+    Atk: 0
+    Def: 5
+    Number: 5
+    itemImage: {fileID: 21300000, guid: e76b30749d6bac4489c3ccf1ccb2c8fc, type: 3}
     isEquied: 0
     weaponIsEquied: 0
     hatIsEquied: 0

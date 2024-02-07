@@ -19,7 +19,7 @@ public class ItemDatabase : MonoBehaviour
     {
         instance = this;
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < itemDB.Count; i++)
         {
             GameObject shopitem = Instantiate(shopItemPrefeb);
             shopitem.transform.parent = content.transform;
