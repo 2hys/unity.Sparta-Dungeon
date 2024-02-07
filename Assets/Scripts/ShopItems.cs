@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ShopItems : MonoBehaviour
 {
@@ -10,15 +11,41 @@ public class ShopItems : MonoBehaviour
     //public SpriteRenderer image;
     public Image image;
     public Text DescTxt, AtkTxt, DefTxt, GoldTxt;
+    public Button btn;
+    public Sprite AtkImage, DefImage;
+    //ItemDatabase itemDatabase;
+
+    private void Awake()
+    {
+        //itemDatabase = GetComponent<ItemDatabase>();
+    }
+
     public void SetItem(Item _item)
     {
         item.Name = _item.Name;
         item.itemImage = _item.itemImage;
         item.itemType = _item.itemType;
+        item.Gold = _item.Gold;
+        item.Atk = _item.Atk;
 
-        //image.sprite = item.itemImage;
         image.sprite = item.itemImage;
-        //todo : 프리펩에 text 넣고 확인
+    }
+
+    public void SetImageType(Item _item)
+    {
+        item.itemType = _item.itemType;
+
+        //itemType에 따라 Shop에서 이미지를 변경
+        if (item.itemType == Item.ItemType.Weapon)
+            GetComponent<Image>().sprite = AtkImage;
+        else
+            GetComponent<Image>().sprite = DefImage;
+
+    }
+
+    public void SetBuyItem(Item _item)
+    {
+        item.Gold = _item.Gold;
     }
 
     public void SetItemDesc(Item _item)
@@ -51,12 +78,51 @@ public class ShopItems : MonoBehaviour
         GoldTxt.text = (item.Gold).ToString();
     }
     //SetItem에서 넣은 구매될 아이템 정보들을 넘김.
+    public void SetItemBuyBtn(Item _item)
+    {
+        item.Number = _item.Number;
+    }
     public Item BuyItem()
     {
         return item;
     }
+    public void Is(Item _item)
+    {
+        
+    }
+
+    public void OnClick()
+    {
+        Debug.Log(item.Number);
+        Inventory.instance.AddItem(ItemDatabase.instance.itemDB[item.Number]);
+        ItemDatabase.instance.itemDB[item.Number].Number = Inventory.instance.inventoryCount;
+    }
 
 
+    /*
+    ShopItems shopItems;
+
+    public void OnClickEquied()
+    {
+        shopItems = GetComponent<ShopItems>();
+
+        if (shopItems.item.isEquied == false)
+        {
+            Debug.Log(shopItems.item.Name + "을 장착했습니다.");
+            shopItems.item.isEquied = true;
+        }
+        PlayerManager.instance.StatUpdate();
+    }
+    */
+    public void OnClickEquied()
+    {
+        if (Inventory.instance.inventory[0].isEquied == false)
+        {
+            Debug.Log(Inventory.instance.inventory[0].Name + "을 장착했습니다.");
+            Inventory.instance.inventory[0].isEquied = true;
+        }
+        PlayerManager.instance.StatUpdate();
+    }
     //public void DestryItem()
     //Destory하지않음.
     //이미 구매했어도 추가 구매 가능.

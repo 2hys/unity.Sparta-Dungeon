@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 313, y: -75}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5417066343844141477
 CanvasRenderer:
@@ -64,17 +64,24 @@ MonoBehaviour:
     Type: 
     Name: 
     Desc: 
-    Number: 
     Gold: 0
     Atk: 0
     Def: 0
+    Number: 0
     itemImage: {fileID: 0}
     isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
   image: {fileID: 0}
   DescTxt: {fileID: 0}
   AtkTxt: {fileID: 482252610725132242}
-  DefTxt: {fileID: 0}
+  DefTxt: {fileID: 482252610725132242}
   GoldTxt: {fileID: 0}
+  btn: {fileID: 0}
+  AtkImage: {fileID: 0}
+  DefImage: {fileID: 0}
 --- !u!114 &482252610725132242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -97,11 +104,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 23
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -143,6 +150,7 @@ RectTransform:
   - {fileID: 7127236958451550853}
   - {fileID: 9071843511009270883}
   - {fileID: 6198515226856758841}
+  - {fileID: 1236466163465505175}
   - {fileID: 8580535217882342364}
   m_Father: {fileID: 0}
   m_RootOrder: -1
@@ -189,7 +197,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 452, y: -75}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3919442374750849415
 CanvasRenderer:
@@ -216,17 +224,24 @@ MonoBehaviour:
     Type: 
     Name: 
     Desc: 
-    Number: 
     Gold: 0
     Atk: 0
     Def: 0
+    Number: 0
     itemImage: {fileID: 0}
     isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
   image: {fileID: 0}
   DescTxt: {fileID: 0}
   AtkTxt: {fileID: 0}
   DefTxt: {fileID: 0}
   GoldTxt: {fileID: 4054761299835692796}
+  btn: {fileID: 0}
+  AtkImage: {fileID: 0}
+  DefImage: {fileID: 0}
 --- !u!114 &4054761299835692796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -249,11 +264,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 23
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -317,17 +332,24 @@ MonoBehaviour:
     Type: 
     Name: 
     Desc: 
-    Number: 
     Gold: 0
     Atk: 0
     Def: 0
+    Number: 0
     itemImage: {fileID: 0}
     isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
   image: {fileID: 1946934808954864080}
   DescTxt: {fileID: 0}
   AtkTxt: {fileID: 0}
   DefTxt: {fileID: 0}
   GoldTxt: {fileID: 0}
+  btn: {fileID: 0}
+  AtkImage: {fileID: 0}
+  DefImage: {fileID: 0}
 --- !u!222 &8125608003398630211
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -378,6 +400,7 @@ GameObject:
   - component: {fileID: 1603910715539140826}
   - component: {fileID: 3463131347519755772}
   - component: {fileID: 5684969873709475276}
+  - component: {fileID: 455209530953469040}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -487,7 +510,54 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3463131347519755772}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 455209530953469040}
+        m_TargetAssemblyTypeName: ShopItems, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &455209530953469040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086099432765073672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32147ec747e9ea14caeabb0fc1486a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    itemType: 0
+    Type: 
+    Name: 
+    Desc: 
+    Gold: 0
+    Atk: 0
+    Def: 0
+    Number: 0
+    itemImage: {fileID: 0}
+    isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
+  image: {fileID: 0}
+  DescTxt: {fileID: 0}
+  AtkTxt: {fileID: 0}
+  DefTxt: {fileID: 0}
+  GoldTxt: {fileID: 0}
+  btn: {fileID: 0}
+  AtkImage: {fileID: 0}
+  DefImage: {fileID: 0}
 --- !u!1 &2307538753643632255
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,17 +702,24 @@ MonoBehaviour:
     Type: 
     Name: 
     Desc: 
-    Number: 
     Gold: 0
     Atk: 0
     Def: 0
+    Number: 0
     itemImage: {fileID: 0}
     isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
   image: {fileID: 0}
   DescTxt: {fileID: 8906120685174787980}
   AtkTxt: {fileID: 0}
   DefTxt: {fileID: 0}
   GoldTxt: {fileID: 0}
+  btn: {fileID: 0}
+  AtkImage: {fileID: 0}
+  DefImage: {fileID: 0}
 --- !u!114 &8906120685174787980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,7 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -665,11 +742,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
-    m_MaxSize: 50
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -690,7 +767,7 @@ GameObject:
   - component: {fileID: 5139449243671868095}
   - component: {fileID: 4475564483168734901}
   m_Layer: 5
-  m_Name: DefImage
+  m_Name: GoldImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,7 +821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 995e264cd10e0b1468a8017a503ba75d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -754,6 +831,118 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4955896236884885291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1236466163465505175}
+  - component: {fileID: 4726812156318675747}
+  - component: {fileID: 2187507843089145574}
+  - component: {fileID: 6523262630301984125}
+  m_Layer: 5
+  m_Name: DefImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1236466163465505175
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955896236884885291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6819696093967072539}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 313, y: 25}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4726812156318675747
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955896236884885291}
+  m_CullTransparentMesh: 1
+--- !u!114 &2187507843089145574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955896236884885291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0cda9288a9e208d46a0e3f67f942ff37, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6523262630301984125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955896236884885291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32147ec747e9ea14caeabb0fc1486a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    itemType: 0
+    Type: 
+    Name: 
+    Desc: 
+    Gold: 0
+    Atk: 0
+    Def: 0
+    Number: 0
+    itemImage: {fileID: 0}
+    isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
+  image: {fileID: 0}
+  DescTxt: {fileID: 0}
+  AtkTxt: {fileID: 0}
+  DefTxt: {fileID: 0}
+  GoldTxt: {fileID: 0}
+  btn: {fileID: 0}
+  AtkImage: {fileID: 21300000, guid: cee439afffe9a7041a20c7adfea3832b, type: 3}
+  DefImage: {fileID: 21300000, guid: 0cda9288a9e208d46a0e3f67f942ff37, type: 3}
 --- !u!1 &6599367762075637539
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +954,7 @@ GameObject:
   - component: {fileID: 6198515226856758841}
   - component: {fileID: 868752325568717688}
   - component: {fileID: 4196274789786934356}
+  - component: {fileID: 3145927503802285741}
   m_Layer: 5
   m_Name: AtkImage
   m_TagString: Untagged
@@ -820,7 +1010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cee439afffe9a7041a20c7adfea3832b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -830,3 +1020,38 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3145927503802285741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599367762075637539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32147ec747e9ea14caeabb0fc1486a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    itemType: 0
+    Type: 
+    Name: 
+    Desc: 
+    Gold: 0
+    Atk: 0
+    Def: 0
+    Number: 0
+    itemImage: {fileID: 0}
+    isEquied: 0
+    weaponIsEquied: 0
+    hatIsEquied: 0
+    armorIsEquied: 0
+    ringIsEquied: 0
+  image: {fileID: 0}
+  DescTxt: {fileID: 0}
+  AtkTxt: {fileID: 0}
+  DefTxt: {fileID: 0}
+  GoldTxt: {fileID: 0}
+  btn: {fileID: 0}
+  AtkImage: {fileID: 21300000, guid: cee439afffe9a7041a20c7adfea3832b, type: 3}
+  DefImage: {fileID: 21300000, guid: 0cda9288a9e208d46a0e3f67f942ff37, type: 3}
