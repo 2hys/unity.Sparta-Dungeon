@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour
         playerDesc.text = PlayerManager.playerDesc;
         playerGold.text = PlayerManager.gold.ToString();
 
-        playerAtk.text = PlayerManager.atk.ToString("F0");
+        playerAtk.text = (PlayerManager.atk + PlayerManager.addedAtk).ToString("F0");
         playerDef.text = PlayerManager.def.ToString("F0");
         playerHp.text = PlayerManager.hp.ToString("F0");
         playerCri.text = PlayerManager.cri.ToString("F0");

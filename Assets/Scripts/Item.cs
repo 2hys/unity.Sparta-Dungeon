@@ -19,6 +19,12 @@ public class Item
     public Sprite itemImage;
     public bool isEquied;
 
+    public bool weaponIsEquied = false;
+    public bool hatIsEquied = false;
+    public bool armorIsEquied = false;
+    public bool ringIsEquied = false;
+
+
     public bool Equiped()
     {
         return false;

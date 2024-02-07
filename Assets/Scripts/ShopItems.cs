@@ -87,7 +87,7 @@ public class ShopItems : MonoBehaviour
     }
 
 
-
+    /*
     ShopItems shopItems;
 
     public void OnClickEquied()
@@ -101,8 +101,8 @@ public class ShopItems : MonoBehaviour
         }
         PlayerManager.instance.StatUpdate();
     }
-
-    public void _OnClickEquied()
+    */
+    public void OnClickEquied()
     {
         if (Inventory.instance.inventory[0].isEquied == false)
         {

@@ -29,10 +29,6 @@ public class Inventory : MonoBehaviour
     public GameObject inventoryItemPrefeb;
     public GameObject content;
 
-    public bool weaponIsEquied = false;
-    public bool hatIsEquied = false;
-    public bool armorIsEquied = false;
-    public bool ringIsEquied = false;
 
     public int inventoryCount = 0;
 
