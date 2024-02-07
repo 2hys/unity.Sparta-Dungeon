@@ -12,7 +12,7 @@ public class ShopItems : MonoBehaviour
     public Image image;
     public Text DescTxt, AtkTxt, DefTxt, GoldTxt;
     public Button btn;
-    
+    public Sprite AtkImage, DefImage;
     //ItemDatabase itemDatabase;
 
     private void Awake()
@@ -29,6 +29,18 @@ public class ShopItems : MonoBehaviour
         item.Atk = _item.Atk;
 
         image.sprite = item.itemImage;
+    }
+
+    public void SetImageType(Item _item)
+    {
+        item.itemType = _item.itemType;
+
+        //itemType에 따라 Shop에서 이미지를 변경
+        if (item.itemType == Item.ItemType.Weapon)
+            GetComponent<Image>().sprite = AtkImage;
+        else
+            GetComponent<Image>().sprite = DefImage;
+
     }
 
     public void SetBuyItem(Item _item)
@@ -74,9 +86,9 @@ public class ShopItems : MonoBehaviour
     {
         return item;
     }
-    public void Is()
+    public void Is(Item _item)
     {
-        Debug.Log("Check");
+        
     }
 
     public void OnClick()

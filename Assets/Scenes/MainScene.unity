@@ -6126,7 +6126,7 @@ MonoBehaviour:
     hatIsEquied: 0
     armorIsEquied: 0
     ringIsEquied: 0
-  - itemType: 0
+  - itemType: 1
     Type: 
     Name: "\uC804\uC7A5\uC758 \uD6C4\uB4DC"
     Desc: "\uC4F0\uAE30 \uC88B\uC740 \uBAA8\uC790\uC774\uB2E4."
@@ -6140,7 +6140,7 @@ MonoBehaviour:
     hatIsEquied: 0
     armorIsEquied: 0
     ringIsEquied: 0
-  - itemType: 0
+  - itemType: 3
     Type: 
     Name: "\uBE0C\uB860\uC988 \uB9C1"
     Desc: "\uC800\uB834\uD55C \uBC18\uC9C0\uC774\uB2E4."

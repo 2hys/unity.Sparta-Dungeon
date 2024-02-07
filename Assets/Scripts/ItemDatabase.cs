@@ -19,6 +19,7 @@ public class ItemDatabase : MonoBehaviour
     {
         instance = this;
 
+        //Shop에 itemDB 등록.
         for (int i = 0; i < itemDB.Count; i++)
         {
             GameObject shopitem = Instantiate(shopItemPrefeb);
@@ -30,6 +31,8 @@ public class ItemDatabase : MonoBehaviour
 
             //아이템 구매
             shopitem.GetComponentsInChildren<ShopItems>()[4].SetItemBuyBtn(itemDB[i]);
+            shopitem.GetComponentsInChildren<ShopItems>()[5].SetImageType(itemDB[i]);
+            //shopitem.GetComponentsInChildren<ShopItems>()[6].SetImageType(itemDB[i]);
         }
 
     }
