@@ -40,6 +40,10 @@ public class UIManager : MonoBehaviour
     bool isActiveShopPanel = false;
     bool isActiveStatsPanel = false;
 
+    public float AddedAtk;
+    public float AddedDef;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,13 +63,16 @@ public class UIManager : MonoBehaviour
     }
     public void UIUpdate()
     {
+        AddedAtk = PlayerManager.HatAtk + PlayerManager.RingAtk + PlayerManager.ArmorAtk + PlayerManager.WeaponAtk;
+        AddedDef = PlayerManager.HatDef + PlayerManager.RingDef + PlayerManager.ArmorDef + PlayerManager.WeaponDef;
+
         playerName.text = PlayerManager.playerName;
         playerLevel.text = "Level : " + PlayerManager.playerLevel.ToString();
         playerDesc.text = PlayerManager.playerDesc;
         playerGold.text = PlayerManager.gold.ToString();
 
-        playerAtk.text = ((PlayerManager.atk + PlayerManager.addedAtk) + $" (+{PlayerManager.addedAtk})").ToString();
-        playerDef.text = PlayerManager.def.ToString("F0");
+        playerAtk.text = ((PlayerManager.atk + AddedAtk) + $" (+{AddedAtk})").ToString();
+        playerDef.text = ((PlayerManager.atk + AddedDef) + $" (+{AddedDef})").ToString();
         playerHp.text = PlayerManager.hp.ToString("F0");
         playerCri.text = PlayerManager.cri.ToString("F0");
     }

@@ -25,13 +25,16 @@ public class PlayerManager : MonoBehaviour
     public static string playerName = "Chad";
     public static string playerDesc = "ÇÇ°ïÇÑ »óÅÂÀÔ´Ï´Ù.";
 
-    public static float addedAtk = 0;
-    public static float addedDef = 0;
+    public static float WeaponAtk, WeaponDef, HatAtk, HatDef, ArmorAtk, ArmorDef, RingAtk, RingDef = 0;
     //
     [SerializeField] public static int gold = 1500;
     public static int playerLevel = 1;
     public static float exp;
 
+    public bool weaponIsEquied = false;
+    public bool hatIsEquied = false;
+    public bool armorIsEquied = false;
+    public bool ringIsEquied = false;
 
     public void StatUpdate()
     {
@@ -39,18 +42,60 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log(Inventory.instance.inventory[i].Name + "ÀÇ ÀåÂøÀ» È®ÀÎÁß");
             Debug.Log(Inventory.instance.inventory[i].Desc + " : ¼³¸í");
-            if (Inventory.instance.inventory[i].isEquied == true)
+
+            if (Inventory.instance.inventory[i].weaponIsEquied == false && Inventory.instance.inventory[i].itemType == Item.ItemType.Weapon)
             {
                 Debug.Log(Inventory.instance.inventory[i].Name + "ÀÇ ÀåÂøÀ» È®ÀÎÇÔ. ½ºÅÝ Àû¿ë");
-                addedAtk = Inventory.instance.inventory[i].Atk;
+                WeaponAtk += Inventory.instance.inventory[i].Atk;
+                WeaponDef += Inventory.instance.inventory[i].Def;
             }
-            else
+            else//ÀåÂøÇØÁ¦
             {
-                addedAtk = 0;
+                WeaponAtk = 0;
+                WeaponDef = 0;
+                Debug.Log(Inventory.instance.inventory[i].Name + "Àº ÀåÂøÁßÀÌÁö ¾ÊÀ½.");
+            }
+
+            if (Inventory.instance.inventory[i].hatIsEquied == false && Inventory.instance.inventory[i].itemType == Item.ItemType.Hat)
+            {
+                Debug.Log(Inventory.instance.inventory[i].Name + "ÀÇ ÀåÂøÀ» È®ÀÎÇÔ. ½ºÅÝ Àû¿ë");
+                HatAtk += Inventory.instance.inventory[i].Atk;
+                HatDef += Inventory.instance.inventory[i].Def;
+            }
+
+            else//ÀåÂøÇØÁ¦
+            {
+                HatAtk = 0;
+                HatDef = 0;
+                Debug.Log(Inventory.instance.inventory[i].Name + "Àº ÀåÂøÁßÀÌÁö ¾ÊÀ½.");
+            }
+
+            if (Inventory.instance.inventory[i].armorIsEquied == false && Inventory.instance.inventory[i].itemType == Item.ItemType.Armor)
+            {
+                Debug.Log(Inventory.instance.inventory[i].Name + "ÀÇ ÀåÂøÀ» È®ÀÎÇÔ. ½ºÅÝ Àû¿ë");
+                ArmorAtk += Inventory.instance.inventory[i].Atk;
+                ArmorDef += Inventory.instance.inventory[i].Def;
+            }
+            else//ÀåÂøÇØÁ¦
+            {
+                ArmorAtk = 0;
+                ArmorDef = 0;
+                Debug.Log(Inventory.instance.inventory[i].Name + "Àº ÀåÂøÁßÀÌÁö ¾ÊÀ½.");
+            }
+
+            if (Inventory.instance.inventory[i].ringIsEquied == false && Inventory.instance.inventory[i].itemType == Item.ItemType.Ring)
+            {
+                Debug.Log(Inventory.instance.inventory[i].Name + "ÀÇ ÀåÂøÀ» È®ÀÎÇÔ. ½ºÅÝ Àû¿ë");
+                RingAtk += Inventory.instance.inventory[i].Atk;
+                RingDef += Inventory.instance.inventory[i].Def;
+            }
+            else//ÀåÂøÇØÁ¦
+            {
+                RingAtk = 0;
+                RingDef = 0;
                 Debug.Log(Inventory.instance.inventory[i].Name + "Àº ÀåÂøÁßÀÌÁö ¾ÊÀ½.");
             }
         }
-        Debug.Log(atk);
         UIManager.instance.UIUpdate();
     }
     // Start is called before the first frame update
