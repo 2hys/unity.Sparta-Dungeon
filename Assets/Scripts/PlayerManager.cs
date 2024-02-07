@@ -45,7 +45,10 @@ public class PlayerManager : MonoBehaviour
                 addedAtk = Inventory.instance.inventory[i].Atk;
             }
             else
+            {
+                addedAtk = 0;
                 Debug.Log(Inventory.instance.inventory[i].Name + "은 장착중이지 않음.");
+            }
         }
         Debug.Log(atk);
         UIManager.instance.UIUpdate();
